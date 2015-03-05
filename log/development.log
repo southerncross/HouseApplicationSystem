@@ -117435,3 +117435,160 @@ Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-03-05 10:50:41
 
 
 Started GET "/assets/welcome.png" for 127.0.0.1 at 2015-03-05 10:50:41 +0800
+
+
+Started GET "/assets/amazeui.css?body=1" for 127.0.0.1 at 2015-03-05 11:11:05 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/assets/images.css?body=1" for 127.0.0.1 at 2015-03-05 11:11:05 +0800
+
+
+Started GET "/assets/buildings.css?body=1" for 127.0.0.1 at 2015-03-05 11:11:05 +0800
+
+
+Started GET "/assets/applications.css?body=1" for 127.0.0.1 at 2015-03-05 11:11:05 +0800
+
+
+Started GET "/assets/attentions.css?body=1" for 127.0.0.1 at 2015-03-05 11:11:05 +0800
+
+
+Started GET "/assets/messages.css?body=1" for 127.0.0.1 at 2015-03-05 11:11:05 +0800
+
+
+Started GET "/assets/queries.css?body=1" for 127.0.0.1 at 2015-03-05 11:11:05 +0800
+
+
+Started GET "/assets/sites.css?body=1" for 127.0.0.1 at 2015-03-05 11:11:05 +0800
+
+
+Started GET "/assets/svgs.css?body=1" for 127.0.0.1 at 2015-03-05 11:11:05 +0800
+
+
+Started GET "/assets/types.css?body=1" for 127.0.0.1 at 2015-03-05 11:11:05 +0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-03-05 11:11:05 +0800
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2015-03-05 11:11:05 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-03-05 11:11:05 +0800
+
+
+Started GET "/buildings" for 127.0.0.1 at 2015-03-05 11:12:21 +0800
+Processing by BuildingsController#index as HTML
+  Rendered buildings/index.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 296ms (Views: 294.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/amazeui.css?body=1" for 127.0.0.1 at 2015-03-05 11:12:21 +0800
+
+
+Started GET "/assets/messages.css?body=1" for 127.0.0.1 at 2015-03-05 11:12:21 +0800
+
+
+Started GET "/assets/attentions.css?body=1" for 127.0.0.1 at 2015-03-05 11:12:21 +0800
+
+
+Started GET "/assets/applications.css?body=1" for 127.0.0.1 at 2015-03-05 11:12:21 +0800
+
+
+Started GET "/assets/images.css?body=1" for 127.0.0.1 at 2015-03-05 11:12:21 +0800
+
+
+Started GET "/assets/buildings.css?body=1" for 127.0.0.1 at 2015-03-05 11:12:21 +0800
+
+
+Started GET "/assets/queries.css?body=1" for 127.0.0.1 at 2015-03-05 11:12:21 +0800
+
+
+Started GET "/assets/sites.css?body=1" for 127.0.0.1 at 2015-03-05 11:12:21 +0800
+
+
+Started GET "/assets/svgs.css?body=1" for 127.0.0.1 at 2015-03-05 11:12:21 +0800
+
+
+Started GET "/assets/types.css?body=1" for 127.0.0.1 at 2015-03-05 11:12:21 +0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-03-05 11:12:21 +0800
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2015-03-05 11:12:21 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-03-05 11:12:21 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-05 11:12:21 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-05 11:12:21 +0800
+
+
+Started GET "/assets/d3.min.js?body=1" for 127.0.0.1 at 2015-03-05 11:12:21 +0800
+
+
+Started GET "/assets/amazeui.js?body=1" for 127.0.0.1 at 2015-03-05 11:12:21 +0800
+
+
+Started GET "/assets/amazeui.legacy.js?body=1" for 127.0.0.1 at 2015-03-05 11:12:21 +0800
+
+
+Started GET "/assets/snap.svg-min.js?body=1" for 127.0.0.1 at 2015-03-05 11:12:21 +0800
+
+
+Started GET "/assets/applications.js?body=1" for 127.0.0.1 at 2015-03-05 11:12:21 +0800
+
+
+Started GET "/assets/attentions.js?body=1" for 127.0.0.1 at 2015-03-05 11:12:21 +0800
+
+
+Started GET "/assets/buildings.js?body=1" for 127.0.0.1 at 2015-03-05 11:12:21 +0800
+
+
+Started GET "/assets/graph.js?body=1" for 127.0.0.1 at 2015-03-05 11:12:21 +0800
+
+
+Started GET "/assets/images.js?body=1" for 127.0.0.1 at 2015-03-05 11:12:21 +0800
+
+
+Started GET "/assets/main.js?body=1" for 127.0.0.1 at 2015-03-05 11:12:21 +0800
+
+
+Started GET "/assets/messages.js?body=1" for 127.0.0.1 at 2015-03-05 11:12:21 +0800
+
+
+Started GET "/assets/queries.js?body=1" for 127.0.0.1 at 2015-03-05 11:12:21 +0800
+
+
+Started GET "/assets/sites.js?body=1" for 127.0.0.1 at 2015-03-05 11:12:21 +0800
+
+
+Started GET "/assets/svgs.js?body=1" for 127.0.0.1 at 2015-03-05 11:12:21 +0800
+
+
+Started GET "/assets/tooltip.js?body=1" for 127.0.0.1 at 2015-03-05 11:12:21 +0800
+
+
+Started GET "/assets/types.js?body=1" for 127.0.0.1 at 2015-03-05 11:12:21 +0800
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2015-03-05 11:12:21 +0800
+
+
+Started GET "/assets/welcom.js?body=1" for 127.0.0.1 at 2015-03-05 11:12:21 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-03-05 11:12:21 +0800
+
+
+Started GET "/assets/E-1-1.jpg" for 127.0.0.1 at 2015-03-05 11:12:21 +0800
+
+
+Started GET "/assets/chenA.png" for 127.0.0.1 at 2015-03-05 11:12:21 +0800
+
+
+Started GET "/assets/E-1-2.jpg" for 127.0.0.1 at 2015-03-05 11:12:21 +0800
