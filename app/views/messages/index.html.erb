@@ -1,0 +1,25 @@
+<% content_for :stylesheets do %>
+.messages-g-fixed {
+height: 600px;
+}
+.my-head {
+margin-top: 40px;
+text-align: center;
+}
+<% end %>
+
+
+<header class="am-g my-head">
+  <div class="am-u-sm-12 am-article">
+    <h1 class="am-article-title">通知公告</h1>
+    <p class="am-article-meta">点击通知标题查看具体内容</p>
+  </div>
+</header>
+<hr class="am-article-divider"/>
+<div class="am-g am-g-fixed messages-g-fixed">
+  <ul class="am-list">
+    <% @messages.each do |message| %>
+    <li><%= link_to '[' + message.date.to_s + '] ' + message.title, message %></li>
+    <% end %>
+  </ul>
+</div>

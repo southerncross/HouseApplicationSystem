@@ -1,0 +1,84 @@
+<% content_for :stylesheets do %>
+.types-g-fixed {
+height: 600px;
+}
+.my-head {
+margin-top: 40px;
+text-align: center;
+}
+
+.my-sidebar {
+padding-right: 0;
+margin-top: 100px;
+//border-right: 1px solid #eeeeee;
+}
+
+.my-title {
+martin-top: 40px;
+}
+
+<% end %>
+
+<div class="am-g am-g-fixed am-u-sm-centered">
+	<div class="am-u-sm-2">
+		<ul class="am-list am-list-border my-sidebar" data-am-sticky="{top:100}">
+			<li><a href="#">E'</a></li>
+			<li><a href="#">E''</a></li>
+			<li><a href="#">G</a></li>
+			<li><a href="#">G'</a></li>
+			<li><a href="#">F</a></li>
+		</ul>
+	</div>
+	<div class="am-u-sm-10">
+		<div class="am-g">
+			<h1 class="my-head">基本信息</h1>
+			<hr>
+			<div class="am-u-sm-8 am-img-thumbnail">
+				<%= image_tag'Ec-1.jpg' %>
+			</div>
+
+			<div class="am-u-sm-4">
+				<h1 class="am-article-title">E'地块</h1>
+				<p><span class="am-badge am-badge-success am-radius am-text-lg">面积</span>38570平方米</p>
+				<p><span class="am-badge am-badge-primary am-radius am-text-lg">餐饮</span>九头鹰酒家（农大店），御京香，丫咪火锅，和气一家人</p>
+				<p><span class="am-badge am-badge-warning am-radius am-text-lg">交通</span>距地铁16号线500米，紧邻肖家河公交站</p>
+				<p><span class="am-badge am-badge-danger am-radius am-text-lg">医疗</span>距北医三院中央党校院区0.8千米，距海淀区红十字医院1.3千米，距上地医院1.3千米</p>
+			</div>
+		</div>
+
+		<div class="am-g">
+			<h1 class="my-head">包含户型</h1>
+			<hr>
+
+			<div class="am-u-sm-8 am-img-thumbnail" id="sites-svg" data-am-popover="{content: '点击楼房以查看详细信息', trigger: 'hover focus'}">
+				<%= inline_svg 'Ec.svg' %>
+			</div>
+
+			<div class="am-u-sm-4">
+			<p><span class="am-badge am-badge-primary am-round am-text-lg" id="badge-wuA">午A</span>(345套)</p>
+			<p><span class="am-badge am-badge-secondary am-round am-text-lg" id="badge-chenA">辰A</span>(128套)</p>
+			<p><span class="am-badge am-badge-success am-round am-text-lg" id="badge-chenB">辰B</span>(764套)</p>
+			<p><span class="am-badge am-badge-warning am-round am-text-lg" id="badge-ziA">子A</span>(233套)</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="am-modal am-modal-no-btn" tabindex="-1" id="my-modal2">
+	<div class="am-modal-dialog">
+		<div class="am-modal-hd">E-1
+			<a href="javascript: void(0)" class="am-close am-close-spin" data-am-modal-close>&times;</a>
+		</div>
+		<div class="am-modal-bd am-g">
+			<div class="am-u-sm-8">
+				<%= image_tag 'E-1-1.jpg' %>
+			</div>
+			<div class="am-u-sm-4">
+				<p><span class="am-badge am-badge-success am-text-default">建筑面积</span><p><p>5480平方米</p>
+				<p><span class="am-badge am-badge-primary am-text-default">包含户型</span></p><p>午A、辰A、子A</p>
+				<p><span class="am-badge am-badge-primary am-text-default">楼层高度</span></p><p>10层</p>
+				<a class="am-modal-btn" href="../buildings">了解更多信息</a>
+			</div>
+		</div>
+	</div>
+</div>

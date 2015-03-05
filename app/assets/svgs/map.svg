@@ -1,0 +1,11 @@
+<svg version="1.1" height="100%" width="100%" viewBox="0,0,550,500" xmlns="http://www.w3.org/2000/svg">
+	<g>
+		<title>map</title>
+		<image xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/jpg/map" preserveAspectRatio="none" x="0" y="0" width="550" height="500"></image>
+		<path id="Ecc" d="M 50 280 l 120 -10 l 5 80 l -120 10 Z" style="stroke: #ee3a8c; stroke-width: 5px; fill: #ee3a8c; fill-opacity: 0"></path>
+		<path id="Ec" d="M 100 367 l 75 -6 l 5 65 l -80 15 Z" style="stroke: #0080ff; stroke-width: 5px; fill: #0080ff; fill-opacity: 0;"></path>
+		<path id="F" d="M 285 172 l 85 -6 l 5 75 l -87 8 Z"  style="stroke: #ffd306; stroke-width: 5px; fill: #ffd306; fill-opacity: 0;"></path>
+		<path id="G" d="M 380 145 l 40 -7 h 23 l 55 95 l -110 8 Z"  style="stroke: #82d900; stroke-width: 5px; fill: #82d900; fill-opacity: 0;"></path>
+		<path id="Gc" d="M 395 255 l 105 -7 l 15 5 l 20 50 l 10 40 l -5 10 l -135 30 l -5 -5 Z" style="stroke: #8600ff; stroke-width: 5px; fill: #8600ff; fill-opacity: 0;"></path>
+	</g>
+</svg>

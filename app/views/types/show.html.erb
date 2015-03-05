@@ -1,0 +1,170 @@
+<% content_for :stylesheets do %>
+@media only screen and (min-width: 641px) {
+.am-offcanvas {
+display: block;
+position: static;
+background: none;
+}
+
+.am-offcanvas-bar {
+position: static;
+width: auto;
+background: none;
+-webkit-transform: translate3d(0, 0, 0);
+-ms-transform: translate3d(0, 0, 0);
+transform: translate3d(0, 0, 0);
+}
+.am-offcanvas-bar:after {
+content: none;
+}
+
+}
+
+@media only screen and (max-width: 640px) {
+.am-offcanvas-bar .am-nav>li>a {
+color:#ccc;
+border-radius: 0;
+border-top: 1px solid rgba(0,0,0,.3);
+box-shadow: inset 0 1px 0 rgba(255,255,255,.05)
+}
+
+.am-offcanvas-bar .am-nav>li>a:hover {
+background: #404040;
+color: #fff
+}
+
+.am-offcanvas-bar .am-nav>li.am-nav-header {
+color: #777;
+background: #404040;
+box-shadow: inset 0 1px 0 rgba(255,255,255,.05);
+text-shadow: 0 1px 0 rgba(0,0,0,.5);
+border-top: 1px solid rgba(0,0,0,.3);
+font-weight: 400;
+font-size: 75%
+}
+
+.am-offcanvas-bar .am-nav>li.am-active>a {
+background: #1a1a1a;
+color: #fff;
+box-shadow: inset 0 1px 3px rgba(0,0,0,.3)
+}
+
+.am-offcanvas-bar .am-nav>li+li {
+margin-top: 0;
+}
+}
+
+.my-head {
+margin-top: 40px;
+text-align: center;
+}
+
+.my-button {
+position: fixed;
+top: 0;
+right: 0;
+border-radius: 0;
+}
+.my-sidebar {
+padding-right: 0;
+border-right: 1px solid #eeeeee;
+}
+
+.my-title {
+text-align: center;
+}
+
+.my-graph {
+height: 300px;
+}
+<% end %>
+
+<div class="am-g am-g-fixed">
+  <header class="my-head">
+    <div class="am-article">
+      <h1 class="am-article-title">户型介绍</h1>
+    </div>
+    <hr class="am-article-divider"/>
+  </header>
+
+  <div class="am-g">
+    <div class="am-u-sm-6 my-map">
+      <div class="am-slider am-slider-default my-slides"
+      data-am-flexslider="{controlNav: 'thumbnails', directionNav: false}" data-am-popover="{content: '点击可放大图片', trigger: 'hover focus'}">
+      <ul class="am-slides">
+        <li class="my-slide" data-thumb="/assets/chenA.png"><%= image_tag 'chenA.png', height: '50' %></li>
+        <li class="my-slide" data-thumb="/assets/chenA-1.jpg"><%= image_tag 'chenA-1.jpg', height: '50' %></li>
+        <li class="my-slide" data-thumb="/assets/chenA-2.jpg"><%= image_tag 'chenA-2.jpg', height: '50' %></li>
+        <li class="my-slide" data-thumb="/assets/chenA-3.jpg"><%= image_tag 'chenA-3.jpg', height: '50' %></li>
+      </ul>
+    </div>
+
+  </div>
+  <div class="am-u-sm-6 am-text-middle">
+    <h1 class="am-article-title"><%= @type.name %>
+      <span class="am-badge am-badge-success am-radius am-text-lg"><%= @type.description %></span>
+      <span class="am-badge am-badge-primary am-radius am-text-lg"><%= @type.area %>平方米</span>
+    </h1>
+    <p>户型总数： <%= @type.amount %>套</p>
+  </div>
+</div>
+
+<div data-am-scrollspy="{animation:'fade', delay: 200}">
+  <header class="my-head">
+    <div class="am-article">
+      <h1 class="am-article-title">户型分布</h1>
+    </div>
+    <hr class="am-article-divider"/>
+  </header>
+  <div class="am-g">
+    <div class="am-u-sm-6" id="svg-map" data-am-popover="{content: '点击地块以查看详细信息', trigger: 'hover focus'}">
+      <%= inline_svg 'map.svg' %>
+    </div>
+    <div class="am-u-sm-6">
+      <ul class="am-list am-list-static am-list-stripped">
+        <li id="li-Ec">E'地块<small>(360套)</small><button type="button" class="am-btn am-btn-link" id="btn-Ec">查看详细</button></li>
+        <li id="li-Ecc">E''地块</li>
+        <li id="li-F">F地块</li>
+        <li id="li-G">G地块</li>
+        <li id="li-Gc">G'地块</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="am-popup" id="my-popup">
+  <div class="am-popup-inner">
+    <div class="am-popup-hd">
+      <h4 class="am-popup-title">午A户型在E'地块中的分布</h4>
+      <span data-am-modal-close
+      class="am-close">&times;</span>
+    </div>
+    <div class="am-modal-bd" id="svg-lot">
+      <p>带颜色的方块为午A户型房屋</p>
+      <%= inline_svg 'Ec.svg' %>
+    </div>
+    <div class="am-modal-bd">
+      <p class="am-modal-btn">点此了解更多E'地块的信息</p>
+    </div>
+  </div>
+</div>
+
+<div class="am-popup" id="img-popup">
+  <div class="am-popup-inner">
+    <div class="am-popup-hd">
+      <h4 class="am-popup-title">户型图: 午A</h4>
+      <span data-am-modal-close
+      class="am-close">&times;</span>
+    </div>
+    <div class="am-modal-bd am-slider am-slider-default"
+    data-am-flexslider>
+    <ul class="am-slides">
+      <li><%= image_tag 'chenA.png' %></li>
+      <li><%= image_tag 'chenA-1.jpg' %></li>
+      <li><%= image_tag 'chenA-2.jpg' %></li>
+      <li><%= image_tag 'chenA-3.jpg' %></li>
+    </ul>
+  </div>
+</div>
+</div>
+

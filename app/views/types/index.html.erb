@@ -1,0 +1,102 @@
+<% content_for :stylesheets do %>
+.types-g-fixed {
+height: 600px;
+}
+.my-head {
+margin-top: 40px;
+text-align: center;
+}
+
+.my-sidebar {
+padding-right: 0;
+margin-top: 100px;
+//border-right: 1px solid #eeeeee;
+}
+
+.my-title {
+martin-top: 40px;
+}
+
+<% end %>
+
+<div class="am-g am-g-fixed am-u-sm-centered">
+	<div class="am-u-sm-2">
+		<ul class="am-list am-list-border my-sidebar" data-am-sticky="{top:100}">
+			<li><a href="#">午A</a></li>
+			<li><a href="#">午B</a></li>
+			<li><a href="#">辰A</a></li>
+			<li><a href="#">辰B</a></li>
+			<li><a href="#">子A</a></li>
+			<li><a href="#">子B</a></li>
+			<li><a href="#">丑A</a></li>
+			<li><a href="#">丑B</a></li>
+		</ul>
+	</div>
+	<div class="am-u-sm-10">
+		<div class="am-g">
+			<h1 class="my-head">基本信息</h1>
+			<hr>
+			<div class="am-u-sm-8 am-img-thumbnail" data-am-popover="{content: '点击图片以放大', trigger: 'hover focus'}" id="type-image">
+				<%= image_tag 'chenA.png' %>
+			</div>
+
+			<div class="am-u-sm-4">
+				<h1 class="am-article-title">辰A</h1>
+				<p><span class="am-badge am-badge-success am-radius am-text-lg">居室</span>3室2厅2卫</p>
+				<p><span class="am-badge am-badge-primary am-radius am-text-lg">面积</span>120平方米</p>
+				<p><span class="am-badge am-badge-warning am-radius am-text-lg">分布</span>E'地块、E''地块</p>
+				<p><span class="am-badge am-badge-danger am-radius am-text-lg">可选人员</span>副教授及以上级别</p>
+			</div>
+		</div>
+
+		<div class="am-g">
+			<h1 class="my-head">户型分布</h1>
+			<hr>
+
+			<div class="am-u-sm-8 am-img-thumbnail" id="svg-map" data-am-popover="{content: '点击地块以查看详细信息', trigger: 'hover focus'}">
+				<%= inline_svg 'map.svg' %>
+			</div>
+
+			<div class="am-u-sm-4">
+				<ul class="am-list am-list-static am-list-stripped">
+					<li id="li-Ec">E'地块<small>(360套)</small><button type="button" class="am-btn am-btn-link" id="btn-Ec">查看详细</button></li>
+					<li id="li-Ecc">E''地块</li>
+					<li id="li-F">F地块</li>
+					<li id="li-G">G地块</li>
+					<li id="li-Gc">G'地块</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="am-popup" id="my-popup">
+	<div class="am-popup-inner">
+		<div class="am-popup-hd">
+			<h4 class="am-popup-title">午A户型在E'地块中的分布</h4>
+			<span data-am-modal-close
+			class="am-close">&times;</span>
+		</div>
+		<div class="am-modal-bd" id="svg-lot">
+			<p>带颜色的方块为午A户型房屋</p>
+			<%= inline_svg 'Ec.svg' %>
+		</div>
+		<div class="am-modal-bd">
+			<p class="am-modal-btn">点此了解更多E'地块的信息</p>
+		</div>
+	</div>
+</div>
+
+<div class="am-popup" id="img-popup">
+	<div class="am-popup-inner">
+		<div class="am-popup-hd">
+			<h4 class="am-popup-title">户型: 辰A</h4>
+			<span data-am-modal-close
+			class="am-close">&times;</span>
+		</div>
+		<div class="am-modal-bd">
+		<%= image_tag "chenA.png" %>
+		</div>
+	</div>
+</div>
