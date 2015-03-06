@@ -15,5 +15,8 @@
 //= require d3.min
 //= require amazeui
 //= require amazeui.legacy
+//= require amazeui.widgets.helper
+//= require app
+//= require handlebars.min
 //= require snap.svg-min
 //= require_tree .
