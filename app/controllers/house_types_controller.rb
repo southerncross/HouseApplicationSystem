@@ -4,6 +4,7 @@ class HouseTypesController < ApplicationController
   end
 
   def show
-    @house_type = HouseType.find(params[:id])
+    @house_types = HouseType.all
+    @house_type = @house_types.find(params[:id])
   end
 end
