@@ -16,6 +16,13 @@ martin-top: 40px;
 <% end %>
 
 <div class="am-g am-g-fixed">
+  <header class="my-head">
+    <div class="am-article">
+      <h1 class="am-article-title">所有户型</h1>
+    </div>
+    <hr class="am-article-divider"/>
+  </header>
+
   <% @house_types.each do |house_type| %>
   <div class="am-u-sm-12 am-u-md-4 am-u-lg-3 <%= "am-u-end" if @house_types.last == house_type %>">
     <div class="am-panel am-panel-default">
