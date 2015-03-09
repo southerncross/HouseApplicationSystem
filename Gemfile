@@ -36,3 +36,6 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+# Font awesome
+gem 'font-awesome-rails'
+
