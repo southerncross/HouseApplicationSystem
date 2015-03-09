@@ -22,7 +22,9 @@ martin-top: 40px;
 <div class="am-g am-g-fixed am-u-sm-centered">
   <div class="am-u-sm-2">
     <ul class="am-list am-list-border my-sidebar" data-am-sticky="{top:100}">
-      <p><%= debug @types %></p>
+      <% @house_types.each do |house_type| %>
+      <li><%= link_to house_type.name, house_types_path(house_type) %></li>
+      <% end %>
     </ul>
   </div>
   <div class="am-u-sm-10">

@@ -1,61 +1,20 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Xjh</title>
-	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-	<%= javascript_include_tag 'application' , 'data-turbolinks-track' => true %>
-	<%= csrf_meta_tags %>
-	<style><%= yield :stylesheets %></style>
-</head>
-<body>
-	<header class="am-topbar am-topbar-fixed-top">
-		<div class="am-container">
-			<h1 class="am-topbar-brand">
-				<%= link_to '肖家河住房申购系统', root_path %></a>
-			</h1>
+  <head>
+    <title>Xjh</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application' , 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <%= render 'layouts/shim' %>
+    <style><%= yield :stylesheets %></style>
+  </head>
+  <body>
 
-			<button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-secondary am-show-sm-only"
-			data-am-collapse="{target: '#collapse-head'}"><span class="am-sr-only">导航切换</span> <span
-			class="am-icon-bars"></span></button>
+    <%= render 'layouts/header' %>
 
-			<div class="am-collapse am-topbar-collapse" id="collapse-head">
-				<ul class="am-nav am-nav-pills am-topbar-nav">
-					<li><%= link_to '首页', root_path %></li>
-					<li><%= link_to '通知公告', messages_path %></li>
-					<li class="am-dropdown" data-am-dropdown>
-						<a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;">
-							房屋展示 <span class="am-icon-caret-down"></span>
-						</a>
-						<ul class="am-dropdown-content">
-							<li><%= link_to '1. 按户型展示', house_types_path %></li>
-							<li><%= link_to '2. 按地块展示', sites_path %></li>
-							<li><%= link_to '3. 按楼号展示', buildings_path %></li>
-							<li><%= link_to '4. 可选房源', '' %></li>
-						</ul>
-					</li>
-					<li><%= link_to '房屋查询', queries_path %></a></li>
-					<li><%= link_to '房屋申购', applications_path %></li>
-					<li><%= link_to '我的关注', attentions_path %></li>
-				</ul>
+    <%= yield %>
 
-				<div class="am-topbar-right">
-					<button class="am-btn am-btn-secondary am-topbar-btn am-btn-sm"><span class="am-icon-pencil"></span> 注册</button>
-				</div>
+    <%= render 'layouts/footer' %>
 
-				<div class="am-topbar-right">
-					<button class="am-btn am-btn-primary am-topbar-btn am-btn-sm"><span class="am-icon-user"></span> 登录</button>
-				</div>
-			</div>
-		</div>
-	</header>
-
-	<%= yield %>
-
-	<footer class="am-margin-top">
-		<hr/>
-		<p class="am-text-center">
-			<small>by 北京大学计算中心</small>
-		</p>
-	</footer>
-</body>
+  </body>
 </html>
