@@ -17,8 +17,8 @@ Rails.application.routes.draw do
   get '/messages', to: 'messages#index'
   get '/messages/:id', to: 'messages#show', as: 'message'
 
-  get '/types', to: 'types#index'
-  get '/types/:id', to: 'types#show', as: 'type'
+  get '/house_types', to: 'house_types#index'
+  get '/house_types/:id', to: 'house_types#show', as: 'type'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

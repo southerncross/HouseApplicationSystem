@@ -10,9 +10,9 @@
 Message.create(date: Date.today, title: 'title test', content: 'content test')
 Message.create(date: Date.today, title: '中文标题', content: '中文内容')
 
-Type.create(name: '午-A', meta: 2, description: '2室2厅1卫', area: 90, amount: 900)
-Type.create(name: '午-A(反)', meta: 2, description: '2室2厅1卫', area: 90, amount: 900)
-Type.create(name: '丑-B', meta: 3, description: '3室2厅1卫', area: 140, amount: 300)
+HouseType.create(name: '午-A', meta: 2, description: '2室2厅1卫', area: 90, amount: 900)
+HouseType.create(name: '午-A(反)', meta: 2, description: '2室2厅1卫', area: 90, amount: 900)
+HouseType.create(name: '丑-B', meta: 3, description: '3室2厅1卫', area: 140, amount: 300)
 
 Site.create(name: "E'地块", area: 38570, transportation: '距地铁16号线500米，紧邻肖家河公交站', medicine: '距北医三院中央党校院区0.8千米，距海淀区红十字医院1.3千米，距上地医院1.3千米', food: '九头鹰酒家（农大店），御京香，丫咪火锅，和气一家人')
 
