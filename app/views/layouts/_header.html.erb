@@ -1,3 +1,4 @@
+<% if sign_in? %>
 <header class="am-topbar am-topbar-fixed-top">
   <div class="am-container">
     <h1 class="am-topbar-brand">
@@ -30,7 +31,6 @@
       </ul>
 
       <div class="am-topbar-right">
-        <% if sign_in? %>
         <li class="am-dropdown" data-am-dropdown>
           <a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;">
             您好 <span class="am-icon-caret-down"></span>
@@ -39,10 +39,8 @@
             <li><%= link_to "登出", signout_path, method: "delete" %></li>
           </ul>
         </li>
-        <% else %>
-        <%= link_to "登录", signin_path, class: "am-btn am-btn-secondary am-btn-topbar-btn am-btn-sm" %>
-        <% end %>
       </div>
     </div>
   </div>
 </header>
+<% end %>

@@ -1,14 +1,38 @@
-<h1>登录</h1>
+<% content_for :stylesheets do %>
 
-<div>
-  <div>
-    <%= form_for(:session, url: sessions_path) do |f| %>
+.header {
+text-align: center;
+}
+
+.header h1 {
+font-size: 200%;
+color: #333;
+margin-top: 30px;
+}
+
+.header p {
+font-size: 14px;
+}
+
+<% end %>
+
+<div class="header">
+  <div class="am-g">
+    <h1>肖家河房屋申购系统</h1>
+  </div>
+  <hr/>
+
+</div>
+<div class="am-g">
+  <div class="am-u-lg-6 am-u-md-8 am-u-sm-centered">
+    <%= form_for :session, url: sessions_path, html: {class: "am-form"} do |f| %>
     <%= f.label :email %>
     <%= f.text_field :email %>
 
     <%= f.label :password %>
     <%= f.password_field :password %>
-    <%= f.submit "登录" %>
+    <br>
+    <%= f.submit "登录", class: "am-btn am-btn-primary" %>
     <% end %>
   </div>
 </div>
