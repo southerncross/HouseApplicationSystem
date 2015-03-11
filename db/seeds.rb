@@ -16,6 +16,12 @@ HouseType.create(name: '丑-B', meta: 3, description: '3室2厅1卫', area: 140,
 
 Site.create(name: "E'地块", area: 38570, transportation: '距地铁16号线500米，紧邻肖家河公交站', medicine: '距北医三院中央党校院区0.8千米，距海淀区红十字医院1.3千米，距上地医院1.3千米', food: '九头鹰酒家（农大店），御京香，丫咪火锅，和气一家人')
 
+Site.create(name: "E''地块", area: 38570, transportation: '距地铁16号线500米，紧邻肖家河公交站', medicine: '距北医三院中央党校院区0.8千米，距海淀区红十字医院1.3千米，距上地医院1.3千米', food: '九头鹰酒家（农大店），御京香，丫咪火锅，和气一家人')
+
+Site.create(name: "F地块", area: 38570, transportation: '距地铁16号线500米，紧邻肖家河公交站', medicine: '距北医三院中央党校院区0.8千米，距海淀区红十字医院1.3千米，距上地医院1.3千米', food: '九头鹰酒家（农大店），御京香，丫咪火锅，和气一家人')
+
+Site.create(name: "G地块", area: 38570, transportation: '距地铁16号线500米，紧邻肖家河公交站', medicine: '距北医三院中央党校院区0.8千米，距海淀区红十字医院1.3千米，距上地医院1.3千米', food: '九头鹰酒家（农大店），御京香，丫咪火锅，和气一家人')
+
 Building.create(name: "E-1", area: 9600)
 
 User.create(name: "xjh", email: "xjh@example.com")
