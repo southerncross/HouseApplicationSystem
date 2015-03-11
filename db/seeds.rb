@@ -18,6 +18,8 @@ Site.create(name: "E'地块", area: 38570, transportation: '距地铁16号线500
 
 Building.create(name: "E-1", area: 9600)
 
+User.create(name: "xjh", email: "xjh@example.com")
+
 =begin
 Svg.create(description: 'Map of locations', content: '<svg height="500" version="1.1" width="550" xmlns="http://www.w3.org/2000/svg">
         <g>
