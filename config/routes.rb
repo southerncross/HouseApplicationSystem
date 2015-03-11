@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'users/new'
-
   get '/images/:format/:path', to: 'images#show'
 
   get '/attentions', to: 'attentions#index'
@@ -19,6 +17,8 @@ Rails.application.routes.draw do
 
   get '/house_types', to: 'house_types#index'
   get '/house_types/:id', to: 'house_types#show', as: 'type'
+
+  get'/users/:id', to: 'users#show', as: 'user'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
