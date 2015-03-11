@@ -1,0 +1,14 @@
+<h1>登录</h1>
+
+<div>
+  <div>
+    <%= form_for(:session, url: sessions_path) do |f| %>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+    <%= f.submit "登录" %>
+    <% end %>
+  </div>
+</div>
