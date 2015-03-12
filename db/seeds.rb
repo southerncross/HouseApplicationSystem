@@ -22,7 +22,13 @@ Site.create(name: "F", area: 38570, transportation: '距地铁16号线500米，�
 
 Site.create(name: "G", area: 38570, transportation: '距地铁16号线500米，紧邻肖家河公交站', medicine: '距北医三院中央党校院区0.8千米，距海淀区红十字医院1.3千米，距上地医院1.3千米', food: '九头鹰酒家（农大店），御京香，丫咪火锅，和气一家人')
 
-Building.create(name: "E-1", area: 9600)
+Building.create(name: "E1-1", area: 9600)
+
+Building.create(name: "E1-2", area: 95588)
+
+Building.create(name: "E1-3", area: 9400)
+
+Building.create(name: "E1-4", area: 8200)
 
 User.create(name: "xjh", email: "xjh@example.com", password: "xjh888", password_confirmation: "xjh888")
 

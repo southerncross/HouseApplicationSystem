@@ -1,4 +1,5 @@
 <% content_for :stylesheets do %>
+
 .types-g-fixed {
 height: 600px;
 }
@@ -19,169 +20,25 @@ martin-top: 40px;
 
 <% end %>
 
-<div class="am-g am-g-fixed am-u-sm-centered">
-	<div class="am-u-sm-2">
-		<ul class="am-list am-list-border my-sidebar" data-am-sticky="{top: 100}">
-			<li><a href="#">E-1</a></li>
-			<li><a href="#">E-2</a></li>
-			<li><a href="#">E-3</a></li>
-			<li><a href="#">E-4</a></li>
-			<li><a href="#">E-5</a></li>
-			<li><a href="#">E-6</a></li>
-			<li><a href="#">E-7</a></li>
-			<li><a href="#">E-8</a></li>
-		</ul>
-	</div>
-	<div class="am-u-sm-10">
-		<div class="am-g">
-			<h1 class="my-head">基本信息</h1>
-			<hr>
-			<div class="am-u-sm-8 am-img-thumbnail">
-				<%= image_tag 'E-1-1.jpg' %>
-			</div>
+<div class="am-g am-g-fixed">
+  <header class="my-head">
+    <div class="am-article">
+      <h1 class="am-article-title">所有楼房</h1>
+    </div>
+    <hr class="am-article-divider"/>
+  </header>
 
-			<div class="am-u-sm-4">
-				<h1 class="am-article-title">E-1</h1>
-				<p><span class="am-badge am-badge-success am-radius am-text-lg">面积</span>53220平方米</p>
-				<p><span class="am-badge am-badge-primary am-radius am-text-lg">楼层</span>10层</p>
-				<p><span class="am-badge am-badge-warning am-radius am-text-lg">户型</span>午A、辰A、子A、丑B</p>
-				<p><span class="am-badge am-badge-primary am-radius am-text-lg">地块</span>E'地块</p>
-			</div>
-		</div>
-
-		<div class="am-g">
-			<h1 class="my-head">地理位置</h1>
-			<hr>
-			<div class="am-u-sm-8 am-u-sm-centered">
-				<%= image_tag 'E-1-2.jpg' %>
-			</div>
-		</div>
-
-		<div class="am-g">
-			<h1 class="my-head">户型分布</h1>
-			<hr>
-
-			<div class="am-g">
-				<p>
-					<span class="am-badge am-badge-default am-round am-text-lg">辰B</span>
-					<span class="am-badge am-badge-secondary am-round am-text-lg">午A</span>
-					<span class="am-badge am-badge-success am-round am-text-lg">辰A</span>
-					<span class="am-badge am-badge-warning am-round am-text-lg">午B</span>
-					<span class="am-badge am-badge-danger am-round am-text-lg">子A</span>
-				</p>
-				<table class="am-table am-table-bordered" data-am-popover="{content: '点击户型以查看详细信息', trigger: 'hover focus'}">
-					<thead>
-						<tr>
-							<th>楼层</th>
-							<th colspan="2">1单元</th>
-							<th colspan="2">2单元</th>
-							<th colspan="2">3单元</th>
-							<th colspan="2">4单元</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>6层</td>
-							<td colspan="2"><button class="am-btn am-btn-default am-btn-block" id="building-chenB">1601</button></td>
-							<td colspan="2"><button class="am-btn am-btn-default am-btn-block">2601</button></td>
-							<td colspan="2"><button class="am-btn am-btn-default am-btn-block">3601</button></td>
-							<td colspan="2"><button class="am-btn am-btn-default am-btn-block">4601</button></td>
-						</tr>
-						<tr>
-							<td>5层</td>
-							<td><button class="am-btn am-btn-secondary">1501</button></td>
-							<td><button class="am-btn am-btn-success">1502</button></td>
-							<td><button class="am-btn am-btn-warning">2501</button></td>
-							<td><button class="am-btn am-btn-warning">2502</button></td>
-							<td><button class="am-btn am-btn-warning">3501</button></td>
-							<td><button class="am-btn am-btn-warning">3502</button></td>
-							<td><button class="am-btn am-btn-success">4501</button></td>
-							<td><button class="am-btn am-btn-secondary">4502</button></td>
-						</tr>
-						<tr>
-							<td>4层</td>
-							<td><button class="am-btn am-btn-secondary">1401</button></td>
-							<td><button class="am-btn am-btn-success">1402</button></td>
-							<td><button class="am-btn am-btn-warning">2401</button></td>
-							<td><button class="am-btn am-btn-warning">2402</button></td>
-							<td><button class="am-btn am-btn-warning">3401</button></td>
-							<td><button class="am-btn am-btn-warning">3402</button></td>
-							<td><button class="am-btn am-btn-success">4401</button></td>
-							<td><button class="am-btn am-btn-secondary">4402</button></td>
-						</tr>
-						<tr>
-							<td>3层</td>
-							<td><button class="am-btn am-btn-secondary">1301</button></td>
-							<td><button class="am-btn am-btn-success">1302</button></td>
-							<td><button class="am-btn am-btn-warning">2301</button></td>
-							<td><button class="am-btn am-btn-warning">2302</button></td>
-							<td><button class="am-btn am-btn-warning">3301</button></td>
-							<td><button class="am-btn am-btn-warning">3302</button></td>
-							<td><button class="am-btn am-btn-success">4301</button></td>
-							<td><button class="am-btn am-btn-secondary">4302</button></td>
-						</tr>
-						<tr>
-							<td>2层</td>
-							<td><button class="am-btn am-btn-secondary">1201</button></td>
-							<td><button class="am-btn am-btn-success">1202</button></td>
-							<td><button class="am-btn am-btn-warning">2201</button></td>
-							<td><button class="am-btn am-btn-warning">2202</button></td>
-							<td><button class="am-btn am-btn-warning">3201</button></td>
-							<td><button class="am-btn am-btn-warning">3202</button></td>
-							<td><button class="am-btn am-btn-success">4201</button></td>
-							<td><button class="am-btn am-btn-secondary">4202</button></td>
-						</tr>
-						<tr>
-							<td>1层</td>
-							<td colspan="2"><button class="am-btn am-btn-danger am-btn-block">1101</button></td>
-							<td colspan="2"><button class="am-btn am-btn-danger am-btn-block">1201</button></td>
-							<td colspan="2"><button class="am-btn am-btn-danger am-btn-block">1301</button></td>
-							<td colspan="2"><button class="am-btn am-btn-danger am-btn-block">1401</button></td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-		</div>
-	</div>
-</div>
-
-
-<div class="am-popup" id="my-popup1">
-	<div class="am-popup-inner">
-		<div class="am-popup-hd">
-			<h4 class="am-popup-title">午A</h4>
-			<span data-am-modal-close
-			class="am-close">&times;</span>
-		</div>
-		<div class="am-popup-bd am-g" id="svg-lot">
-			<div class="am-u-sm-8">
-				<%= image_tag 'chenA.png' %>
-			</div>
-			<div class="am-u-sm-4">
-				<p><span class="am-badge am-badge-success am-text-default">2室1厅1卫</span></p>
-				<p><span class="am-badge am-badge-primary am-text-default">90平米</span></p>
-				<p><span class="am-badge am-badge-primary am-text-default">90平米</span></p>
-				<p class="am-popup-btn">点此了解更多E'地块的信息</p>
-			</div>
-		</div>
-	</div>
-</div>
-
-<div class="am-modal am-modal-no-btn" tabindex="-1" id="my-modal">
-	<div class="am-modal-dialog">
-		<div class="am-modal-hd">午A
-			<a href="javascript: void(0)" class="am-close am-close-spin" data-am-modal-close>&times;</a>
-		</div>
-		<div class="am-modal-bd am-g">
-			<div class="am-u-sm-8">
-				<%= image_tag 'chenA.png' %>
-			</div>
-			<div class="am-u-sm-4">
-				<p><span class="am-badge am-badge-success am-text-default">2室1厅1卫</span></p>
-				<p><span class="am-badge am-badge-primary am-text-default">90平米</span></p>
-				<p><span class="am-badge am-badge-primary am-text-default">90平米</span></p>
-				<a class="am-modal-btn" href="../types/1">了解更多信息</a>
-			</div>
-		</div>
-	</div>
+  <% @buildings.each do |building| %>
+  <div class="am-u-sm-12 am-u-md-4 am-u-lg-2 <%= "am-u-end" if @buildings.last == building %>">
+    <div class="am-panel am-panel-default">
+      <div class="am-panel-hd">
+        <%= building.name %>
+      </div>
+      <div class="am-panel-bd">
+        <%= image_tag "buildings/#{building.name}.jpg", class: "am-radius" %>
+        <p><%= link_to "查看详细", controller: "buildings", action: "show", id: building %></p>
+      </div>
+    </div>
+  </div>
+  <% end %>
 </div>

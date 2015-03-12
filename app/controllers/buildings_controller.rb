@@ -4,6 +4,7 @@ class BuildingsController < ApplicationController
   end
 
   def show
-    @building = Building.find(params[:id])
+    @buildings = Building.all
+    @building = @buildings.find(params[:id])
   end
 end
