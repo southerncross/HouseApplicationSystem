@@ -1,105 +1,144 @@
 <% content_for :stylesheets do %>
+
 .my-head {
 margin-top: 40px;
 text-align: center;
 }
+
 <% end %>
 
 <header class="am-g my-head">
-	<div class="am-u-sm-12 am-article">
-		<h1 class="am-article-title">房屋申购</h1>
-	</div>
+  <div class="am-u-sm-12 am-article">
+    <h1 class="am-article-title">房屋申购</h1>
+  </div>
+  <hr class="am-article-divider">
 </header>
 
 <div class="am-g-fixed am-u-lg-centered">
-	<table class="am-table">
-		<thead>
-			<tr>
-				<th>进度</th>
-				<th>流程</th>
-				<th>时间安排</th>
-				<th>教职工操作</th>
-				<th>房地产部操作</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr class="am-disabled">
-				<td><span class="am-badge">已结束</span></td>
-				<td>提交申请<span class="am-icon-question-circle am-icon-sm"></span></td>
-				<td>2014-11-31至2015-1-1</td>
-				<td><button type="button" class="am-btn">个人申请，提交材料</button></td>
-				<td></td>
-			</tr>
-			<tr class="am-disabled">
-				<td><span class="am-badge">已结束</span></td>
-				<td>资格审核<span class="am-icon-question-circle am-icon-sm"></td>
-				<td>2014-11-31至2015-1-1</td>
-				<td></td>
-				<td><button type="button" class="am-btn">资格审核，按资格排队</span></td>
-			</tr>
-			<tr class="am-disabled">
-				<td><span class="am-badge">已结束</span></td>
-				<td>排队公示1榜<span class="am-icon-question-circle am-icon-sm"></td>
-				<td>2014-11-31至2015-1-1</td>
-				<td><button type="button" class="am-btn am-btn-default">查看排队公示1榜</button></td>
-				<td></td>
-			</tr>
-			<tr class="am-success">
-				<td><span class="am-badge am-badge-success">正在进行中</span></td>
-				<td>排队调整<span class="am-icon-question-circle am-icon-sm"></td>
-				<td>2014-11-31至2015-1-1</td>
-				<td></td>
-				<td><button type="button" class="am-btn am-btn-default">根据反馈进行调整</button></td>
-			</tr>
-			<tr>
-				<td><span class="am-badge">尚未开始</span></td>
-				<td>排队公示2榜<span class="am-icon-question-circle am-icon-sm"></td>
-				<td>2014-11-31至2015-1-1</td>
-				<td><button type="button" class="am-btn am-btn-default">查看排队公示2榜</button></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td><span class="am-badge">尚未开始</span></td>
-				<td>排队调整<span class="am-icon-question-circle am-icon-sm"></td>
-				<td>2014-11-31至2015-1-1</td>
-				<td></td>
-				<td><button type="button" class="am-btn am-btn-default">根据反馈进行调整</button></td>
-			</tr>
-			<tr>
-				<td><span class="am-badge">尚未开始</span></td>
-				<td>排队公示3榜<span class="am-icon-question-circle am-icon-sm"></td>
-				<td>2014-11-31至2015-1-1</td>
-				<td><button type="button" class="am-btn am-btn-default">查看排队公示3榜</button></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td><span class="am-badge">尚未开始</span></td>
-				<td>确定选房时间<span class="am-icon-question-circle am-icon-sm"></td>
-				<td>2014-11-31至2015-1-1</td>
-				<td></td>
-				<td><button type="button" class="am-btn am-btn-default">根据队列确定选房时间段，通知申请人</button></td>
-			</tr>
-			<tr>
-				<td><span class="am-badge">尚未开始</span></td>
-				<td>网上选房<span class="am-icon-question-circle am-icon-sm"></td>
-				<td>2014-11-31至2015-1-1</td>
-				<td><button type="button" class="am-btn am-btn-default">查看选房时间，在线选房</button></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td><span class="am-badge">尚未开始</span></td>
-				<td>选房结果公示<span class="am-icon-question-circle am-icon-sm"></td>
-				<td>2014-11-31至2015-1-1</td>
-				<td><button type="button" class="am-btn am-btn-default">查看选房结果</button></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td><span class="am-badge">尚未开始</span></td>
-				<td>购房手续办理<span class="am-icon-question-circle am-icon-sm"></td>
-				<td>2014-11-31至2015-1-1</td>
-				<td><button type="button" class="am-btn am-btn-default">按通知进行办理</button></td>
-				<td><button type="button" class="am-btn am-btn-default">计算应缴费用，生成各类协议及表格，通知购房人</button></td>
-			</tr>
-		</tbody>
-	</table>
+
+  <p>正在进行: 排队调整</p>
+  <div class="am-progress am-progress-striped am-active">
+    <div class="am-progress-bar" style="width: 30%"></div>
+  </div>
+
+  <section data-am-widget="accordion" class="am-accordion am-accordion-gapped"
+           data-am-accordion='{  }'>
+    <dl class="am-accordion-item">
+      <dt class="am-accordion-title"><del>提交申请</del><span class="am-badge am-round">已结束</span></dt>
+      <dd class="am-accordion-bd am-collapse ">
+        <!-- 规避 Collapase 处理有 padding 的折叠内容计算计算有误问题， 加一个容器 -->
+        <div class="am-accordion-content">
+          <p>2015-05-10至2015-05-30</p>
+          <p>您可以提交购房申请</p>
+          <button type="button" class="am-btn am-btn-default">点击提交申请</button>
+        </div>
+      </dd>
+    </dl>
+    <dl class="am-accordion-item">
+      <dt class="am-accordion-title"><del>资格审核</del><span class="am-badge am-round">已结束</span></dt>
+      <dd class="am-accordion-bd am-collapse ">
+        <!-- 规避 Collapase 处理有 padding 的折叠内容计算计算有误问题， 加一个容器 -->
+        <div class="am-accordion-content">
+          <p>2015-05-10至2015-05-30</p>
+          <p>我们将对您的购房资格进行审核</p>
+        </div>
+      </dd>
+    </dl>
+    <dl class="am-accordion-item am-active">
+      <dt class="am-accordion-title">公示排队第1榜<span class="am-badge am-round am-badge-success">正在进行</span></dt>
+      <dd class="am-accordion-bd am-collapse am-in">
+        <!-- 规避 Collapase 处理有 padding 的折叠内容计算计算有误问题， 加一个容器 -->
+        <div class="am-accordion-content">
+          <p>2015-06-01至2015-06-15</p>
+          <p>您可以查看当前排队结果或提交反馈</p>
+          <button type="button" class="am-btn am-btn-default">点击查看排队榜单</button>
+          <button type="button" class="am-btn am-btn-default">点击提交反馈</button>
+        </div>
+      </dd>
+    </dl>
+    <dl class="am-accordion-item am-disable">
+      <dt class="am-accordion-title">排队调整<span class="am-badge am-round am-badge-danger">尚未开始</span></dt>
+      <dd class="am-accordion-bd am-collapse ">
+        <!-- 规避 Collapase 处理有 padding 的折叠内容计算计算有误问题， 加一个容器 -->
+        <div class="am-accordion-content">
+          <p>2015-05-10至2015-05-30</p>
+          <p>我们将根据之前的反馈对榜单进行调整</p>
+        </div>
+      </dd>
+    </dl>
+    <dl class="am-accordion-item am-disable">
+      <dt class="am-accordion-title">公示排队第2榜<span class="am-badge am-round am-badge-danger">尚未开始</span></dt>
+      <dd class="am-accordion-bd am-collapse ">
+        <!-- 规避 Collapase 处理有 padding 的折叠内容计算计算有误问题， 加一个容器 -->
+        <div class="am-accordion-content">
+          <p>2015-05-10至2015-05-30</p>
+          <p>您可以查看当前排队结果或提交反馈</p>
+          <button type="button" class="am-btn am-btn-default">点击查看排队榜单</button>
+          <button type="button" class="am-btn am-btn-default">点击提交反馈</button>
+        </div>
+      </dd>
+    </dl>
+    <dl class="am-accordion-item am-disable">
+      <dt class="am-accordion-title">排队调整<span class="am-badge am-round am-badge-danger">尚未开始</span></dt>
+      <dd class="am-accordion-bd am-collapse ">
+        <!-- 规避 Collapase 处理有 padding 的折叠内容计算计算有误问题， 加一个容器 -->
+        <div class="am-accordion-content">
+          <p>2015-05-10至2015-05-30</p>
+          <p>我们将根据之前的反馈对榜单进行调整</p>
+        </div>
+      </dd>
+    </dl>
+    <dl class="am-accordion-item am-disable">
+      <dt class="am-accordion-title">公示排队最终榜<span class="am-badge am-round am-badge-danger">尚未开始</span></dt>
+      <dd class="am-accordion-bd am-collapse ">
+        <!-- 规避 Collapase 处理有 padding 的折叠内容计算计算有误问题， 加一个容器 -->
+        <div class="am-accordion-content">
+          <p>2015-05-10至2015-05-30</p>
+          <p>您可以查看当前排队结果</p>
+          <button type="button" class="am-btn am-btn-default">点击查看排队榜单</button>
+        </div>
+      </dd>
+    </dl>
+    <dl class="am-accordion-item am-disable">
+      <dt class="am-accordion-title">确定选房时间<span class="am-badge am-round am-badge-danger">尚未开始</span></dt>
+      <dd class="am-accordion-bd am-collapse ">
+        <!-- 规避 Collapase 处理有 padding 的折叠内容计算计算有误问题， 加一个容器 -->
+        <div class="am-accordion-content">
+          <p>2015-05-10至2015-05-30</p>
+          <p>我们将敲定选房时间并通知各位候选人</p>
+        </div>
+      </dd>
+    </dl>
+    <dl class="am-accordion-item am-disable">
+      <dt class="am-accordion-title">现场选房<span class="am-badge am-round am-badge-danger">尚未开始</span></dt>
+      <dd class="am-accordion-bd am-collapse ">
+        <!-- 规避 Collapase 处理有 padding 的折叠内容计算计算有误问题， 加一个容器 -->
+        <div class="am-accordion-content">
+          <p>2015-05-10至2015-05-30</p>
+          <p>请您准时参加选房</p>
+          <div class="am-alert am-alert-secondary" data-am-alert>
+            <p>时间：2015-07-03 13:20:00</p>
+            <p>地点：XXX</p>
+          </div>
+        </div>
+      </dd>
+    </dl>
+    <dl class="am-accordion-item am-disable">
+      <dt class="am-accordion-title">办理后续购房手续<span class="am-badge am-round am-badge-danger">尚未开始</span></dt>
+      <dd class="am-accordion-bd am-collapse ">
+        <!-- 规避 Collapase 处理有 padding 的折叠内容计算计算有误问题， 加一个容器 -->
+        <div class="am-accordion-content">
+          <p>2015-05-10至2015-05-30</p>
+          <p>请您按工作人员的通知办理购房手续</p>
+        </div>
+      </dd>
+    </dl>
+  </section>
+</div>
+
+<div data-am-widget="gotop" class="am-gotop am-gotop-default">
+  <a href="#top" title="回到顶部">
+    <span class="am-gotop-title">回到顶部</span>
+    <i class="am-gotop-icon am-icon-chevron-up"></i>
+  </a>
 </div>
