@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150311045832) do
+ActiveRecord::Schema.define(version: 20150317074033) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,17 @@ ActiveRecord::Schema.define(version: 20150311045832) do
     t.datetime "updated_at"
     t.integer  "meta"
   end
+
+  create_table "houses", force: true do |t|
+    t.string   "door"
+    t.integer  "unit"
+    t.integer  "floor"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "house_type_id"
+  end
+
+  add_index "houses", ["house_type_id"], name: "index_houses_on_house_type_id", using: :btree
 
   create_table "messages", force: true do |t|
     t.date     "date"

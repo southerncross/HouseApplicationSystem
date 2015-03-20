@@ -19,77 +19,79 @@ text-align: center;
            data-am-accordion='{  }'>
     <dl class="am-accordion-item">
       <dt class="am-accordion-title">户型
-        <span class="am-badge am-badge-primary am-round">子A</span>
+        <% @house_types.each do |house_type| %>
+        <span class="am-badge am-badge-primary am-round query-banner" id="house-type-<%= house_type.id %>-banner" style="display:none;"><%= house_type.name %></span>
+        <% end %>
       </dt>
       <dd class="am-accordion-bd am-collapse">
         <!-- 规避 Collapase 处理有 padding 的折叠内容计算计算有误问题， 加一个容器 -->
         <div class="am-accordion-content">
           <% @house_types.each do |house_type| %>
-          <button type="button" class="am-btn am-btn-default"><%= house_type.name %></button>
+            <button type="button" class="am-btn am-btn-default query query-house-type" id="house-type-<%= house_type.id %>"><%= house_type.name %></button>
           <% end %>
         </div>
       </dd>
     </dl>
     <dl class="am-accordion-item">
       <dt class="am-accordion-title">地块
-        <span class="am-badge am-badge-primary am-round">E</span>
-        <span class="am-badge am-badge-primary am-round">G</span>
+        <% @sites.each do |site| %>
+        <span class="am-badge am-badge-primary am-round query-banner" id="site-<%= site.id %>-banner" style="display:none;"><%= site.name %></span>
+        <% end %>
       </dt>
       <dd class="am-accordion-bd am-collapse ">
         <!-- 规避 Collapase 处理有 padding 的折叠内容计算计算有误问题， 加一个容器 -->
         <div class="am-accordion-content">
           <% @sites.each do |site| %>
-          <button type="button" class="am-btn am-btn-default"><%= site.name %></button>
+          <button type="button" class="am-btn am-btn-default query query-site" id="site-<%= site.id %>"><%= site.name %></button>
           <% end %>
         </div>
       </dd>
     </dl>
     <dl class="am-accordion-item">
-      <dt class="am-accordion-title">楼房
-        <span class="am-badge am-badge-primary am-round">E1-1</span>
+      <dt class="am-accordion-title">楼号
+        <% @buildings.each do |building| %>
+        <span class="am-badge am-badge-primary am-round query-banner" id="building-<%= building.id %>-banner" style="display:none;"><%= building.name %></span>
+        <% end %>
       </dt>
       <dd class="am-accordion-bd am-collapse ">
         <!-- 规避 Collapase 处理有 padding 的折叠内容计算计算有误问题， 加一个容器 -->
         <div class="am-accordion-content">
           <% @buildings.each do |building| %>
-          <button type="button" class="am-btn am-btn-default"><%= building.name %></button>
+          <button type="button" class="am-btn am-btn-default query query-building" id="building-<%= building.id %>"><%= building.name %></button>
           <% end %>
         </div>
       </dd>
     </dl>
     <dl class="am-accordion-item">
       <dt class="am-accordion-title">面积
-        <span class="am-badge am-badge-primary am-round">70</span>
-        <span class="am-badge am-badge-primary am-round">80</span>
-        <span class="am-badge am-badge-primary am-round">90</span>
+        <% @areas.each do |area| %>
+        <span class="am-badge am-badge-primary am-round query-banner" id="area-<%= area %>-banner" style="display:none;"><%= area %>平米</span>
+        <% end %>
       </dt>
       <dd class="am-accordion-bd am-collapse ">
         <!-- 规避 Collapase 处理有 padding 的折叠内容计算计算有误问题， 加一个容器 -->
         <div class="am-accordion-content">
           <div class="am-btn-group">
-            <button type="button" class="am-btn am-btn-default">70平米</button>
-            <button type="button" class="am-btn am-btn-default">80平米</button>
-            <button type="button" class="am-btn am-btn-default">120平米</button>
+            <% @areas.each do |area| %>
+            <button type="button" class="am-btn am-btn-default query query-area" id="area-<%= area %>"><%= area %>平米</button>
+            <% end %>
           </div>
         </div>
       </dd>
     </dl>
     <dl class="am-accordion-item">
       <dt class="am-accordion-title">楼层
-        <span class="am-badge am-badge-primary am-round">3层</span>
-        <span class="am-badge am-badge-primary am-round">4层</span>
-        <span class="am-badge am-badge-primary am-round">5层</span>
+        <% @floors.each do |floor| %>
+        <span class="am-badge am-badge-primary am-round query-banner" id="floor-<%= floor %>-banner" style="display:none;"><%= floor %>楼</span>
+        <% end %>
       </dt>
       <dd class="am-accordion-bd am-collapse ">
         <!-- 规避 Collapase 处理有 padding 的折叠内容计算计算有误问题， 加一个容器 -->
         <div class="am-accordion-content">
           <div class="am-btn-group">
-            <button type="button" class="am-btn am-btn-default">1楼</button>
-            <button type="button" class="am-btn am-btn-default">2楼</button>
-            <button type="button" class="am-btn am-btn-default">3楼</button>
-            <button type="button" class="am-btn am-btn-default">4楼</button>
-            <button type="button" class="am-btn am-btn-default">5楼</button>
-            <button type="button" class="am-btn am-btn-default">6楼</button>
+            <% @floors.each do |floor| %>
+            <button type="button" class="am-btn am-btn-default query query-floor" id="floor-<%= floor %>"><%= floor %>楼</button>
+            <% end %>
           </div>
         </div>
       </dd>
@@ -97,7 +99,11 @@ text-align: center;
   </section>
 </div>
 
-  <hr>
+<div>
+  <button type="button" class="am-btn am-btn-default btn-query" style="display:none;">Query</button>
+</div>
+
+<hr>
 
 <div class="am-g-fixed am-center">
   <table class="am-table">
@@ -106,42 +112,15 @@ text-align: center;
 	<th>户型</th><th>地块</th><th>面积</th><th>楼号</th><th>单元号</th><th>门牌号</th><th>居室</th><th>操作</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody class="query-result">
       <tr>
-	<td>午A</td><td>E'</td><td>90平方米</td><td>E-1</td><td>1</td><td>101</td><td>2室2厅1卫</td><td><button type="button" class="am-btn am-btn-success">关注</button></td>
+	<td>T-1</td><td>S-1</td><td>90平方米</td><td>E-1</td><td>1</td><td>101</td><td>2室2厅1卫</td><td><button type="button" class="am-btn am-btn-success">关注</button></td>
       </tr>
       <tr>
-	<td>午A</td><td>E'</td><td>90平方米</td><td>E-1</td><td>1</td><td>201</td><td>2室2厅1卫</td><td><button type="button" class="am-btn am-btn-success">关注</button></td>
+	<td>T-1</td><td>S-1</td><td>90平方米</td><td>E-1</td><td>1</td><td>101</td><td>2室2厅1卫</td><td><button type="button" class="am-btn am-btn-success">关注</button></td>
       </tr>
       <tr>
-	<td>午A</td><td>E'</td><td>90平方米</td><td>E-1</td><td>1</td><td>301</td><td>2室2厅1卫</td><td><button type="button" class="am-btn am-btn-success">关注</button></td>
-      </tr>
-      <tr>
-	<td>午A</td><td>E'</td><td>90平方米</td><td>E-1</td><td>1</td><td>401</td><td>2室2厅1卫</td><td><button type="button" class="am-btn am-btn-success">关注</button></td>
-      </tr>
-      <tr>
-	<td>午A</td><td>E'</td><td>90平方米</td><td>E-1</td><td>1</td><td>501</td><td>2室2厅1卫</td><td><button type="button" class="am-btn am-btn-danger">取消关注</button></td>
-      </tr>
-      <tr>
-	<td>午A</td><td>E'</td><td>90平方米</td><td>E-1</td><td>1</td><td>601</td><td>2室2厅1卫</td><td><button type="button" class="am-btn am-btn-success">关注</button></td>
-      </tr>
-      <tr>
-	<td>午A</td><td>E'</td><td>90平方米</td><td>E-1</td><td>2</td><td>101</td><td>2室2厅1卫</td><td><button type="button" class="am-btn am-btn-success">关注</button></td>
-      </tr>
-      <tr>
-	<td>午A</td><td>E'</td><td>90平方米</td><td>E-1</td><td>2</td><td>201</td><td>2室2厅1卫</td><td><button type="button" class="am-btn am-btn-danger">取消关注</button></td>
-      </tr>
-      <tr>
-	<td>午A</td><td>E'</td><td>90平方米</td><td>E-1</td><td>2</td><td>301</td><td>2室2厅1卫</td><td><button type="button" class="am-btn am-btn-success">关注</button></td>
-      </tr>
-      <tr>
-	<td>午A</td><td>E'</td><td>90平方米</td><td>E-1</td><td>2</td><td>401</td><td>2室2厅1卫</td><td><button type="button" class="am-btn am-btn-danger">取消关注</button></td>
-      </tr>
-      <tr>
-	<td>午A</td><td>E'</td><td>90平方米</td><td>E-1</td><td>2</td><td>501</td><td>2室2厅1卫</td><td><button type="button" class="am-btn am-btn-success">关注</button></td>
-      </tr>
-      <tr>
-	<td>午A</td><td>E'</td><td>90平方米</td><td>E-1</td><td>2</td><td>601</td><td>2室2厅1卫</td><td><button type="button" class="am-btn am-btn-success">关注</button></td>
+	<td>T-1</td><td>S-1</td><td>90平方米</td><td>E-1</td><td>1</td><td>101</td><td>2室2厅1卫</td><td><button type="button" class="am-btn am-btn-success">关注</button></td>
       </tr>
     </tbody>
   </table>

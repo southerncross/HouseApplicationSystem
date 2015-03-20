@@ -40,3 +40,4 @@ gem 'bcrypt'
 # Font awesome
 gem 'font-awesome-rails'
 
+gem 'ransack'

@@ -4,8 +4,12 @@ Rails.application.routes.draw do
   get '/images/:format/:path', to: 'images#show'
 
   get '/attentions', to: 'attentions#index'
+
   get '/applications', to: 'applications#index'
+
   get '/queries', to: 'queries#index'
+  post '/queries/select', to: 'queries#select_house'
+
   get '/svgs/:path', to: 'svgs#show'
 
   get '/buildings', to: 'buildings#index'

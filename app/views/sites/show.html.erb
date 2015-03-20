@@ -23,7 +23,7 @@ martin-top: 40px;
 <div class="am-g am-g-fixed am-u-sm-centered">
   <header class="my-head">
     <div class="am-article">
-      <h1 class="am-article-title"><%= @site.name %></h1>
+      <h1 class="am-article-title"><%= @site.name %>地块</h1>
     </div>
     <hr class="am-article-divider"/>
   </header>
@@ -59,10 +59,10 @@ martin-top: 40px;
       </div>
 
       <div class="am-u-sm-4">
-        <p><span class="am-badge am-badge-primary am-round am-text-lg" id="badge-wuA">午A</span>(345套)</p>
-        <p><span class="am-badge am-badge-secondary am-round am-text-lg" id="badge-chenA">辰A</span>(128套)</p>
-        <p><span class="am-badge am-badge-success am-round am-text-lg" id="badge-chenB">辰B</span>(764套)</p>
-        <p><span class="am-badge am-badge-warning am-round am-text-lg" id="badge-ziA">子A</span>(233套)</p>
+        <p><span class="am-badge am-badge-primary am-round am-text-lg" id="badge-wuA">T-1</span>(345套)</p>
+        <p><span class="am-badge am-badge-secondary am-round am-text-lg" id="badge-chenA">T-2</span>(128套)</p>
+        <p><span class="am-badge am-badge-success am-round am-text-lg" id="badge-chenB">T-3</span>(764套)</p>
+        <p><span class="am-badge am-badge-warning am-round am-text-lg" id="badge-ziA">T-4</span>(233套)</p>
       </div>
     </div>
   </div>
@@ -70,16 +70,16 @@ martin-top: 40px;
 
 <div class="am-modal am-modal-no-btn" tabindex="-1" id="my-modal2">
   <div class="am-modal-dialog">
-    <div class="am-modal-hd">E-1
+    <div class="am-modal-hd">B-1
       <a href="javascript: void(0)" class="am-close am-close-spin" data-am-modal-close>&times;</a>
     </div>
     <div class="am-modal-bd am-g">
       <div class="am-u-sm-8">
-        <%= image_tag 'E-1-1.jpg' %>
+        <%= image_tag 'buildings/1.jpg' %>
       </div>
       <div class="am-u-sm-4">
         <p><span class="am-badge am-badge-success am-text-default">建筑面积</span><p><p>5480平方米</p>
-            <p><span class="am-badge am-badge-primary am-text-default">包含户型</span></p><p>午A、辰A、子A</p>
+            <p><span class="am-badge am-badge-primary am-text-default">包含户型</span></p><p>T-1, T-2, T-3, T-4</p>
             <p><span class="am-badge am-badge-primary am-text-default">楼层高度</span></p><p>10层</p>
             <%= link_to "了解更多信息", buildings_path, class: "am-modal-btn" %>
       </div>

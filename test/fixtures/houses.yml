@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  door: MyString
+  unit: 1
+  floor: 1
+
+two:
+  door: MyString
+  unit: 1
+  floor: 1

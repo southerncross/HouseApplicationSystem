@@ -105,8 +105,8 @@ height: 300px;
       <div class="am-u-sm-4">
 	<p><span class="am-badge am-badge-success am-radius am-text-lg">居室</span><%= @house_type.description %></p>
 	<p><span class="am-badge am-badge-primary am-radius am-text-lg">面积</span><%= @house_type.area %>平方米</p>
-	<p><span class="am-badge am-badge-warning am-radius am-text-lg">分布</span>E'地块、E''地块</p>
-	<p><span class="am-badge am-badge-danger am-radius am-text-lg">可选人员</span>副教授及以上级别</p>
+	<p><span class="am-badge am-badge-warning am-radius am-text-lg">分布</span>S-1地块、S-2地块</p>
+	<p><span class="am-badge am-badge-danger am-radius am-text-lg">可选人员</span>C级及以上人员</p>
       </div>
     </div>
 
@@ -118,11 +118,11 @@ height: 300px;
       </div>
       <div class="am-u-sm-4">
 	<ul class="am-list am-list-static am-list-border am-list-stripped">
-	  <li id="li-Ec">E'地块<small>(360套)</small><button type="button" class="am-btn am-btn-link" id="btn-Ec">查看详细</button></li>
-	  <li id="li-Ecc">E''地块</li>
-	  <li id="li-F">F地块</li>
-	  <li id="li-G">G地块</li>
-	  <li id="li-Gc">G'地块</li>
+	  <li id="li-Ec">S-1地块<small>(900套)</small><button type="button" class="am-btn am-btn-link" id="btn-Ec">查看详细</button></li>
+	  <li id="li-Ecc">S-2地块<small>(900套)</small></li>
+	  <li id="li-F">S-3地块<small>(900套)</small></li>
+	  <li id="li-G">S-4地块<small>(900套)</small></li>
+	  <li id="li-Gc">S-5地块<small>(900套)</small></li>
 	</ul>
       </div>
     </div>
@@ -132,16 +132,16 @@ height: 300px;
 <div class="am-popup" id="my-popup">
   <div class="am-popup-inner">
     <div class="am-popup-hd">
-      <h4 class="am-popup-title">午A户型在E'地块中的分布</h4>
+      <h4 class="am-popup-title">T-1户型在S-1地块中的分布</h4>
       <span data-am-modal-close
 	    class="am-close">&times;</span>
     </div>
     <div class="am-modal-bd" id="svg-lot">
-      <p>带颜色的方块为午A户型房屋</p>
+      <p>带颜色的方块为T-1户型房屋</p>
       <%= inline_svg 'Ec.svg' %>
     </div>
     <div class="am-modal-bd">
-      <p class="am-modal-btn">点此了解更多E'地块的信息</p>
+      <p class="am-modal-btn">点此了解更多S-1地块的信息</p>
     </div>
   </div>
 </div>
@@ -149,7 +149,7 @@ height: 300px;
 <div class="am-popup" id="img-popup">
   <div class="am-popup-inner">
     <div class="am-popup-hd">
-      <h4 class="am-popup-title">户型: 辰A</h4>
+      <h4 class="am-popup-title">户型: T1</h4>
       <span data-am-modal-close
 	    class="am-close">&times;</span>
     </div>

@@ -23,7 +23,7 @@ martin-top: 40px;
 <div class="am-g am-g-fixed am-u-sm-centered">
   <header class="my-head">
     <div class="am-article">
-      <h1 class="am-article-title"><%= @building.name %></h1>
+      <h1 class="am-article-title"><%= @building.name %>号楼</h1>
     </div>
     <hr class="am-article-divider"/>
   </header>
@@ -39,14 +39,14 @@ martin-top: 40px;
   <div class="am-u-sm-10">
     <div class="am-g">
       <div class="am-u-sm-8 am-img-thumbnail">
-	<%= image_tag "buildings/#{@building.name}.jpg" %>
+	<%= image_tag "buildings/1.jpg" %>
       </div>
       <div class="am-u-sm-4">
 	<h1 class="am-article-title"><%= @building.name %></h1>
 	<p><span class="am-badge am-badge-success am-radius am-text-lg">面积</span>53220平方米</p>
 	<p><span class="am-badge am-badge-primary am-radius am-text-lg">楼层</span>10层</p>
-	<p><span class="am-badge am-badge-warning am-radius am-text-lg">户型</span>午A、辰A、子A、丑B</p>
-	<p><span class="am-badge am-badge-primary am-radius am-text-lg">地块</span>E'地块</p>
+	<p><span class="am-badge am-badge-warning am-radius am-text-lg">户型</span>T-1, T-2, T-3</p>
+	<p><span class="am-badge am-badge-primary am-radius am-text-lg">地块</span>S-2地块</p>
       </div>
     </div>
 
@@ -54,7 +54,7 @@ martin-top: 40px;
       <h1 class="my-head">地理位置</h1>
       <hr>
       <div class="am-u-sm-8 am-u-sm-centered">
-	<%= image_tag "buildings/E1-1-1.jpg" %>
+	<%= image_tag "buildings/location.jpg" %>
       </div>
     </div>
 
@@ -64,11 +64,11 @@ martin-top: 40px;
 
       <div class="am-g">
 	<p>
-	  <span class="am-badge am-badge-default am-round am-text-lg">辰B</span>
-	  <span class="am-badge am-badge-secondary am-round am-text-lg">午A</span>
-	  <span class="am-badge am-badge-success am-round am-text-lg">辰A</span>
-	  <span class="am-badge am-badge-warning am-round am-text-lg">午B</span>
-	  <span class="am-badge am-badge-danger am-round am-text-lg">子A</span>
+	  <span class="am-badge am-badge-default am-round am-text-lg">T-1</span>
+	  <span class="am-badge am-badge-secondary am-round am-text-lg">T-2</span>
+	  <span class="am-badge am-badge-success am-round am-text-lg">T-3</span>
+	  <span class="am-badge am-badge-warning am-round am-text-lg">T-4</span>
+	  <span class="am-badge am-badge-danger am-round am-text-lg">T-5</span>
 	</p>
 	<table class="am-table am-table-bordered" data-am-popover="{content: '点击户型以查看详细信息', trigger: 'hover focus'}">
 	  <thead>
@@ -150,19 +150,19 @@ martin-top: 40px;
 <div class="am-popup" id="my-popup1">
   <div class="am-popup-inner">
     <div class="am-popup-hd">
-      <h4 class="am-popup-title">午A</h4>
+      <h4 class="am-popup-title">T-1</h4>
       <span data-am-modal-close
 	    class="am-close">&times;</span>
     </div>
     <div class="am-popup-bd am-g" id="svg-lot">
       <div class="am-u-sm-8">
-	<%= image_tag 'chenA.png' %>
+	<%= image_tag 'house_types/T-1.jpg' %>
       </div>
       <div class="am-u-sm-4">
 	<p><span class="am-badge am-badge-success am-text-default">2室1厅1卫</span></p>
 	<p><span class="am-badge am-badge-primary am-text-default">90平米</span></p>
 	<p><span class="am-badge am-badge-primary am-text-default">90平米</span></p>
-	<p class="am-popup-btn">点此了解更多E'地块的信息</p>
+	<p class="am-popup-btn">点此了解更多S-1地块的信息</p>
       </div>
     </div>
   </div>
@@ -170,12 +170,12 @@ martin-top: 40px;
 
 <div class="am-modal am-modal-no-btn" tabindex="-1" id="my-modal">
   <div class="am-modal-dialog">
-    <div class="am-modal-hd">午A
+    <div class="am-modal-hd">T-1
       <a href="javascript: void(0)" class="am-close am-close-spin" data-am-modal-close>&times;</a>
     </div>
     <div class="am-modal-bd am-g">
       <div class="am-u-sm-8">
-	<%= image_tag 'buildings/E1-1.jpg' %>
+	<%= image_tag 'buildings/1.jpg' %>
       </div>
       <div class="am-u-sm-4">
 	<p><span class="am-badge am-badge-success am-text-default">2室1厅1卫</span></p>
