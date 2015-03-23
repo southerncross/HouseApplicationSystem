@@ -11,9 +11,7 @@ $(function() {
       $(this).addClass('am-active');
       $('#' + $(this).attr('id') + '-banner').fadeIn();
     }
-  });
 
-  $('.btn-query').click(function() {
     query_and_display(QUERY_URL,
                       collect_queries(QUERY_KEYS),
                       {display_callback: display_data});
