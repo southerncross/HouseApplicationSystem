@@ -1,5 +1,5 @@
 $(function() {
-  var QUERY_KEYS = ['house-type', 'site', 'area', 'floor'];
+  var QUERY_KEYS = ['house-type', 'site', 'area', 'floor', 'building'];
   var QUERY_URL = 'queries/select';
 
   $('.query').click(function () {
@@ -12,19 +12,6 @@ $(function() {
       $('#' + $(this).attr('id') + '-banner').fadeIn();
     }
   });
-
-  /*
-  $('.query-house-type').click(function() {
-    if ($(this).hasClass('am-active')) {
-      $(this).removeClass('am-active');
-      $('#house-type-banner-' + $(this).attr('id').split('-').pop()).fadeOut();
-    }
-    else {
-      $(this).addClass('am-active');
-      $('#house-type-banner-' + $(this).attr('id').split('-').pop()).fadeIn();
-    }
-  });
-   */
 
   $('.btn-query').click(function() {
     query_and_display(QUERY_URL,
@@ -52,47 +39,54 @@ $(function() {
       dataType: 'json',
       data: {query: queries}
     }).done(function(data, textStatus, jqXHR) {
-      //display(data);
-      console.log(data);
+      display(data);
     }).fail(function(jqXHR, textStatus, errorThrown) {
       console.log(textStatus);
     });
   }
 
-  /*
-  $('.btn-query').click(function() {
-    var queries = {};
-    var house_type_ids = [];
-
-    house_type_ids.push($('.query-house-type.am-active').map(function() {
-      return $(this).attr('id').split('-').pop();
-    }).get());
-    queries['house_type_id'] = house_type_ids;
-
-    // console.log(queries);
-
-    $.ajax(
-      'queries/select',
-      {
-        type: 'post',
-        dataType: 'json',
-        data: {query: queries}
-      }).done(function(data, textStatus, jqXHR) {
-        display_data(data);
-      }).fail(function(jqXHR, textStatus, errorThrown) {
-        console.log(textStatus);
-      });
-  });
-   */
-
   function display_data(data) {
     var blackboard = $('.query-result');
+    var houses = [];
+    var buildings = {};
+    var house_types = {};
+    var sites = {};
+    var tmp = [];
 
     blackboard.empty();
-    $(data).each(function(i, e) {
-      e = e[0];
-      blackboard.append('<tr><td>' + e.name + '</td><td>' + e.description + '</td><td>' + e.area + '</td><td>' + e.amount + '</td></tr>');
-      // console.log(e[0]);
+    houses = data['house'];
+    tmp = data['house_type']
+    $(tmp).each(function(i, e) {
+      house_types[e.id] = e;
+    });
+    tmp = data['building'];
+    $(tmp).each(function(i, e) {
+      buildings[e.id] = e;
+    });
+    tmp = data['site'];
+    $(tmp).each(function(i, e) {
+      sites[e.id] = e;
+    });
+
+    $(houses).each(function(i, e) {
+      var house_type = house_types[e.house_type_id].name;
+      var site = sites[buildings[e.building_id].site_id].name;
+      var area = house_types[e.house_type_id].area;
+      var building = buildings[e.building_id].name;
+      var unit = e.unit;
+      var floor = e.floor;
+      var door = e.door;
+      var description = house_types[e.house_type_id].description;
+
+      blackboard.append('<tr><td>' + house_type +
+                        '</td><td>' + site +
+                        '</td><td>' + area +
+                        '</td><td>' + building +
+                        '</td><td>' + unit +
+                        '</td><td>' + floor +
+                        '</td><td>' + door +
+                        '</td><td>' + description +
+                        '</td><td><button class="am-btn am-btn-primary">关注</button></td></tr>');
     });
   }
 });

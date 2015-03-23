@@ -45,18 +45,23 @@ HouseType.create(name: 'T-5', meta: 2, description: '2室2厅1卫', area: 80, am
 HouseType.create(name: 'T-6', meta: 3, description: '3室2厅1卫', area: 90, amount: 900)
 HouseType.create(name: 'T-7', meta: 3, description: '3室2厅1卫', area: 90, amount: 900)
 
-house_types = HouseType.all
-4.times do |unit|
-  6.times do |floor|
-    2.times do |door|
-      house_types.each {|house_type| house_type.houses.create!(door: floor.to_s + "0" + door.to_s, unit: unit, floor: floor)}
+%w(S-1 S-2 S-3 S-4).each {|name| Site.create(name: name, area: 38570, transportation: '这里是交通运输情况介绍', medicine: '这里是医疗卫生情况介绍', food: '这里是餐饮购物情况介绍')}
+
+(1..12).each do |order|
+  Building.create(name: "B-#{order + 1}", area: 9600, site_id: (rand(3) + 1).to_s)
+end
+
+(1..4).each do |unit|
+  (1..6).each do |floor|
+    (1..2).each do |door|
+      HouseType.all.each do |house_type|
+        Building.all.each do |building|
+          house_type.houses.create!(door: floor.to_s + "0" + door.to_s, unit: unit, floor: floor, building_id: building.id)
+        end
+      end
     end
   end
 end
-
-%w(S-1 S-2 S-3 S-4).each {|name| Site.create(name: name, area: 38570, transportation: '这里是交通运输情况介绍', medicine: '这里是医疗卫生情况介绍', food: '这里是餐饮购物情况介绍')}
-
-%w(1 2 3 4 5 6 7 8 9 10 11 12).each {|name| Building.create(name: name, area: 9600)}
 
 User.create(name: "xjh", email: "xjh@example.com", password: "xjh888", password_confirmation: "xjh888")
 

@@ -8,21 +8,55 @@ class QueriesController < ApplicationController
   end
 
   def select_house
-    house_type_ids = params[:query]? params[:query][:house_type] : nil
-    site_ids = params[:query]? params[:query][:site] : nil
-    areas = params[:query]? params[:query][:area] : nil
-    floors = params[:query]? params[:query][:floor] : nil
+    query = {
+      house_type: nil,
+      site:       nil,
+      building:   nil,
+      area:       nil,
+      floor:      nil,
+      door:       nil
+    }
 
-    house_arel = House.arel;
-    house_type = house_type_ids ? house_arel[:house_type_id].eq(house_type_ids) : nil
+    if params[:query]
+      query.each do |k, v|
+        query[k] = params[:query][k]
+      end
+    end
+
+    table = House.arel_table
+    result = House
+    result = result.where(table[:house_type_id].in(query[:house_type])) if query[:house_type]
+    result = result.where(table[:floor].in(query[:floor])) if query[:floor]
+    result = result.where(table[:building_id].in(query[:building])) if query[:building]
+    result = result.where(table[:door].in(query[:door])) if query[:door]
+    result = result.take(200)
+
+    house_types = HouseType.all
+    buildings = Building.all
+    sites = Site.all
+
+    if query[:site]
+      result = result.select do |house|
+        t = Building.arel_table
+        Building.where(t[:id].eq(house[:building_id]).and(t[:site_id].in(query[:site]))).count > 0
+      end
+    end
+
+    if query[:area]
+      result = result.select do |house|
+        t = HouseType.arel_table
+        HouseType.where(t[:id].eq(house[:house_type_id]).and(t[:area].in(query[:area]))).count > 0
+      end
+    end
 
     respond_to do |format|
       format.json {render json: {
-          house_type_ids: house_type_ids,
-          site_ids: site_ids,
-          areas: areas,
-          floors: floors
-        }}
+          house: result,
+          house_type: house_types,
+          building: buildings,
+          site: sites
+        }
+      }
     end
   end
 end
