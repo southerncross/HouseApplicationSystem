@@ -17,6 +17,10 @@ $(function() {
                       {display_callback: display_data});
   });
 
+  $('.care').click(function() {
+    // TODO
+  });
+
   function collect_queries(keys) {
     var queries = {};
 
@@ -43,11 +47,11 @@ $(function() {
     });
   }
 
-  function array2hash(a) {
+  function array2hash(a, key) {
     var res = {};
 
     $(a).each(function(i, e) {
-      res[e.id] = e;
+      res[e[key]] = e;
     });
 
     return res;
@@ -56,9 +60,10 @@ $(function() {
   function display_data(data) {
     var blackboard = $('.query-result');
     var houses = data['house'];
-    var buildings = array2hash(data['building']);
-    var house_types = array2hash(data['house_type']);
-    var sites = array2hash(data['site']);
+    var buildings = array2hash(data['building'], 'id');
+    var house_types = array2hash(data['house_type'], 'id');
+    var sites = array2hash(data['site'], 'id');
+    var attentions = array2hash(data['attention'], 'house_id');
 
     blackboard.empty();
 
@@ -72,20 +77,24 @@ $(function() {
       var door = e.door;
       var description = house_types[e.house_type_id].description;
       var attention_count = e.attention_count;
+      var iscared = attentions.hasOwnProperty(e.id);
 
-      blackboard.append(
-        '<tr>' +
-          '<td>' + house_type      + '</td>' +
-          '<td>' + site            + '</td>' +
-          '<td>' + area            + '</td>' +
-          '<td>' + building        + '</td>' +
-          '<td>' + unit            + '</td>' +
-          '<td>' + floor           + '</td>' +
-          '<td>' + door            + '</td>' +
-          '<td>' + description     + '</td>' +
-          '<td>' + attention_count + '</td>' +
-          '<td><button class="am-btn am-btn-primary">关注</button></td>' +
-        '</tr>');
+      var content =
+            '<tr>' +
+            '<td>' + house_type      + '</td>' +
+            '<td>' + site            + '</td>' +
+            '<td>' + area            + '</td>' +
+            '<td>' + building        + '</td>' +
+            '<td>' + unit            + '</td>' +
+            '<td>' + floor           + '</td>' +
+            '<td>' + door            + '</td>' +
+            '<td>' + description     + '</td>' +
+            '<td>' + attention_count + '</td>' +
+            '<td><button class="am-btn am-btn-' + (iscared ? 'danger' : 'success') + ' care" id="' + e.id + '">' +
+            (iscared ? '取消关注' : '关注') +
+            '</button></td>' +
+            '</tr>';
+      blackboard.append(content);
     });
   }
 });

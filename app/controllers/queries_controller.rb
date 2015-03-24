@@ -23,6 +23,9 @@ class QueriesController < ApplicationController
       end
     end
 
+    table = Attention.arel_table
+    attentions = Attention.where(table[:user_id].eq(current_user[:id]))
+
     table = House.arel_table
     result = House
     result = result.where(table[:house_type_id].in(query[:house_type])) if query[:house_type]
@@ -54,7 +57,8 @@ class QueriesController < ApplicationController
           house: result,
           house_type: house_types,
           building: buildings,
-          site: sites
+          site: sites,
+          attention: attentions
         }
       }
     end
