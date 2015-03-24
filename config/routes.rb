@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/images/:format/:path', to: 'images#show'
 
   get '/attentions', to: 'attentions#index'
+  post '/attentions/query', to: 'attentions#query'
 
   get '/applications', to: 'applications#index'
 

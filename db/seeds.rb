@@ -56,7 +56,7 @@ end
     (1..2).each do |door|
       HouseType.all.each do |house_type|
         Building.all.each do |building|
-          house_type.houses.create!(door: floor.to_s + "0" + door.to_s, unit: unit, floor: floor, building_id: building.id)
+          house_type.houses.create!(door: floor.to_s + "0" + door.to_s, unit: unit, floor: floor, building_id: building.id, attention_count: rand(100))
         end
       end
     end
@@ -64,6 +64,10 @@ end
 end
 
 User.create(name: "xjh", email: "xjh@example.com", password: "xjh888", password_confirmation: "xjh888")
+
+10.times do |i|
+  Attention.create(user_id: 1, house_id: rand(500))
+end
 
 =begin
 Svg.create(description: 'Map of locations', content: '<svg height="500" version="1.1" width="550" xmlns="http://www.w3.org/2000/svg">
