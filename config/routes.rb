@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   get '/queries', to: 'queries#index'
   post '/queries/select', to: 'queries#select_house'
+  post '/queries/add_attention', to: 'queries#add_attention'
+  delete '/queries/remove_attention', to: 'queries#remove_attention'
 
   get '/svgs/:path', to: 'svgs#show'
 

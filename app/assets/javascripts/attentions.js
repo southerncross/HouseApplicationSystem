@@ -22,7 +22,7 @@ $(function() {
     }).done(function(data, textStatus, jqXHR) {
       btn.parent().parent().remove();
       $('#note-area').append(
-        '<div class="am-alert"><button type="button" class="am-close" data-am-alert>&times;</button>已取消关注</div>'
+        '<div class="am-alert am-alert-danger"><button type="button" class="am-close" data-am-alert>&times;</button>已取消关注</div>'
       );
     }).fail(function(jqXHR, textStatus, errorThrown) {
       console.log(errorThrown);
@@ -84,7 +84,7 @@ $(function() {
           '<td>' + door            + '</td>' +
           '<td>' + description     + '</td>' +
           '<td>' + attention_count + '</td>' +
-          '<td><button class="am-btn am-btn-primary delete" id="' + e.id + '">取消关注</button></td>' +
+          '<td><button class="am-btn am-btn-danger delete" id="' + e.id + '">取消关注</button></td>' +
         '</tr>');
     });
   }

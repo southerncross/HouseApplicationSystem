@@ -63,4 +63,39 @@ class QueriesController < ApplicationController
       }
     end
   end
+
+  def add_attention
+    ret = Attention.create(user_id: current_user.id, house_id: params[:house_id]) ? 0 : 1
+    table = House.arel_table
+    house = House.where(table[:id].eq(params[:house_id])).first
+    if ret
+      house[:attention_count] += 1
+      house.save
+    end
+    respond_to do |format|
+      format.json {render json: {
+          ret: ret,
+          count: house[:attention_count]
+        }
+      }
+    end
+  end
+
+  def remove_attention
+    table = Attention.arel_table
+    ret = Attention.where(table[:user_id].eq(current_user.id).and(table[:house_id].eq(params[:house_id]))).destroy_all ? 0 : 1
+    table = House.arel_table
+    house = House.where(table[:id].eq(params[:house_id])).first
+    if ret
+      house[:attention_count] -= 1
+      house.save
+    end
+    respond_to do |format|
+      format.json {render json: {
+          ret: ret,
+          count: house[:attention_count]
+        }
+      }
+    end
+  end
 end

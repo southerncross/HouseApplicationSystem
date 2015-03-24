@@ -35,7 +35,7 @@ text-align: center;
         <td><%= house.door %></td>
         <td><%= @house_types[house.house_type_id].description %></td>
         <td><%= house.attention_count %></td>
-        <td><button class="am-btn am-btn-primary delete" id="<%= house.id%>">取消关注</button></td>
+        <td><button class="am-btn am-btn-danger delete" id="<%= house.id%>">取消关注</button></td>
       </tr>
       <% end %>
     </tbody>

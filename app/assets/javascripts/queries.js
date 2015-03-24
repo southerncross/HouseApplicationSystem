@@ -1,5 +1,7 @@
 $(function() {
   var QUERY_KEYS = ['house-type', 'site', 'area', 'floor', 'building'];
+  var ADD_ATTENTION_URL = 'queries/add_attention';
+  var REMOVE_ATTENTION_URL = 'queries/remove_attention';
   var QUERY_URL = 'queries/select';
 
   $('.query').click(function () {
@@ -17,9 +19,48 @@ $(function() {
                       {display_callback: display_data});
   });
 
-  $('.care').click(function() {
-    // TODO
-  });
+  function addAttention() {
+    console.log('add');
+    var house_id = $(this).attr('id');
+
+    $.ajax(ADD_ATTENTION_URL, {
+      type: 'post',
+      dataType: 'json',
+      data: {house_id: house_id}
+    }).done(function(data, textStatus, jqXHR) {
+      console.log(data);
+      $('#' + house_id)
+        .html('取消关注')
+        .removeClass('am-btn-success')
+        .addClass('am-btn-danger')
+        .parent().prev().html(data.count);
+    }).fail(function(jqXHR, textStatus, errorThrown) {
+      console.log(textStatus);
+    });
+    $(this).unbind('click');
+    $(this).click(removeAttention);
+  }
+
+  function removeAttention() {
+    console.log('remove');
+    var house_id = $(this).attr('id');
+
+    $.ajax(REMOVE_ATTENTION_URL, {
+      type: 'delete',
+      dataType: 'json',
+      data: {house_id: house_id}
+    }).done(function(data, textStatus, jqXHR) {
+      $('#' + house_id)
+        .html('关注')
+        .removeClass('am-btn-danger')
+        .addClass('am-btn-success')
+        .parent().prev().html(data.count);
+    }).fail(function(jqXHR, textStatus, errorThrown) {
+      console.log(textStatus);
+    });
+    $(this).unbind('click');
+    $(this).click(addAttention);
+  }
 
   function collect_queries(keys) {
     var queries = {};
@@ -42,6 +83,8 @@ $(function() {
       data: {query: queries}
     }).done(function(data, textStatus, jqXHR) {
       display(data);
+      $('.care').click(addAttention);
+      $('.not-care').click(removeAttention);
     }).fail(function(jqXHR, textStatus, errorThrown) {
       console.log(textStatus);
     });
@@ -90,7 +133,7 @@ $(function() {
             '<td>' + door            + '</td>' +
             '<td>' + description     + '</td>' +
             '<td>' + attention_count + '</td>' +
-            '<td><button class="am-btn am-btn-' + (iscared ? 'danger' : 'success') + ' care" id="' + e.id + '">' +
+            '<td><button class="am-btn am-btn-' + (iscared ? 'danger not-care' : 'success care') + '" id="' + e.id + '">' +
             (iscared ? '取消关注' : '关注') +
             '</button></td>' +
             '</tr>';
