@@ -15,6 +15,8 @@ text-align: center;
 </header>
 
 <div class="am-g-fixed am-u-sm-centered">
+  <div id="note-area">
+  </div>
   <table class="am-table">
     <thead>
       <tr>
@@ -22,6 +24,20 @@ text-align: center;
       </tr>
     </thead>
     <tbody class="query-result">
+      <% @houses.each do |house| %>
+      <tr>
+        <td><%= @house_types[house.house_type_id].name %></td>
+        <td><%= @sites[@buildings[house.building_id].site_id].name %></td>
+        <td><%= @house_types[house.house_type_id].area %></td>
+        <td><%= @buildings[house.building_id].name %></td>
+        <td><%= house.unit %></td>
+        <td><%= house.floor %></td>
+        <td><%= house.door %></td>
+        <td><%= @house_types[house.house_type_id].description %></td>
+        <td><%= house.attention_count %></td>
+        <td><button class="am-btn am-btn-primary delete" id="<%= house.id%>">取消关注</button></td>
+      </tr>
+      <% end %>
     </tbody>
   </table>
 </div>

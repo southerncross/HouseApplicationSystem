@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   get '/attentions', to: 'attentions#index'
   post '/attentions/query', to: 'attentions#query'
+  delete '/attentions', to: 'attentions#destroy'
 
   get '/applications', to: 'applications#index'
 
