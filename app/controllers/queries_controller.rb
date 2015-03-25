@@ -17,10 +17,8 @@ class QueriesController < ApplicationController
       door:       nil
     }
 
-    if params[:query]
-      query.each do |k, v|
-        query[k] = params[:query][k]
-      end
+    query.each do |k, v|
+      query[k] = params[k]
     end
 
     table = Attention.arel_table
@@ -32,7 +30,7 @@ class QueriesController < ApplicationController
     result = result.where(table[:floor].in(query[:floor])) if query[:floor]
     result = result.where(table[:building_id].in(query[:building])) if query[:building]
     result = result.where(table[:door].in(query[:door])) if query[:door]
-    result = result.take(200)
+    result = result.take(params[:limit])
 
     house_types = HouseType.all
     buildings = Building.all

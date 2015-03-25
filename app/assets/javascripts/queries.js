@@ -3,6 +3,9 @@ $(function() {
   var ADD_ATTENTION_URL = 'queries/add_attention';
   var REMOVE_ATTENTION_URL = 'queries/remove_attention';
   var QUERY_URL = 'queries/select';
+  var LIMIT = 50;
+  var _queries = {};
+  var _offset = 0;
 
   $('.query').click(function () {
     if ($(this).hasClass('am-active')) {
@@ -14,9 +17,9 @@ $(function() {
       $('#' + $(this).attr('id') + '-banner').fadeIn();
     }
 
-    query_and_display(QUERY_URL,
-                      collect_queries(QUERY_KEYS),
-                      {display_callback: display_data});
+    queryAndDisplay(QUERY_URL,
+                    collectQueries(QUERY_KEYS),
+                    {callback: showData});
   });
 
   function addAttention() {
@@ -62,25 +65,27 @@ $(function() {
     $(this).click(addAttention);
   }
 
-  function collect_queries(keys) {
-    var queries = {};
-
+  function collectQueries(keys) {
+    _queries = {};
+    _offset = 0;
     $(keys).each(function(i, e) {
-      queries[e.replace('-', '_')] = $('.query-' + e + '.am-active').map(function() {
+      _queries[e.replace('-', '_')] = $('.query-' + e + '.am-active').map(function() {
         return $(this).attr('id').split('-').pop();
       }).get();
     });
+    _queries['limit'] = LIMIT;
+    _queries['offset'] = _offset;
 
-    return queries;
+    return _queries;
   }
 
-  function query_and_display(url, queries, option) {
-    var display = option.display_callback;
+  function queryAndDisplay(url, queries, option) {
+    var display = option.callback;
 
     $.ajax(url, {
       type: 'post',
       dataType: 'json',
-      data: {query: queries}
+      data: queries
     }).done(function(data, textStatus, jqXHR) {
       display(data);
       $('.care').click(addAttention);
@@ -88,6 +93,11 @@ $(function() {
     }).fail(function(jqXHR, textStatus, errorThrown) {
       console.log(textStatus);
     });
+  }
+
+  function showNextBunchOfData() {
+    _offset += LIMIT;
+    queryAndDisplay(QUERY_URL, _queries, {callback: showData});
   }
 
   function array2hash(a, key) {
@@ -100,7 +110,7 @@ $(function() {
     return res;
   }
 
-  function display_data(data) {
+  function showData(data) {
     var blackboard = $('.query-result');
     var houses = data['house'];
     var buildings = array2hash(data['building'], 'id');
