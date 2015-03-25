@@ -19,4 +19,5 @@
 //= require app
 //= require handlebars.min
 //= require snap.svg-min
+//= require stupidtable.min
 //= require_tree .

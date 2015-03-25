@@ -102,10 +102,19 @@ text-align: center;
 <hr>
 
 <div class="am-g-fixed am-center">
-  <table class="am-table">
+  <table class="am-table am-table-striped am-table-hover am-table-radius am-table-bordered" id="stupid-table">
     <thead>
       <tr>
-	<th>户型</th><th>地块</th><th>面积</th><th>楼号</th><th>单元号</th><th>楼层</th><th>门牌号</th><th>居室</th><th>关注人数</th><th>操作</th>
+	<th data-sort="string"><span class="am-icon-filter">户型</span></th>
+        <th data-sort="string"><span class="am-icon-filter">地块</span></th>
+        <th data-sort="int"><span class="am-icon-filter">面积</span></th>
+        <th data-sort="string"><span class="am-icon-filter">楼号</span></th>
+        <th data-sort="int"><span class="am-icon-filter">单元号</span></th>
+        <th data-sort="int"><span class="am-icon-filter">楼层</span></th>
+        <th data-sort="int"><span class="am-icon-filter">门牌号</span></th>
+        <th data-sort="string"><span class="am-icon-filter">居室</span></th>
+         <th data-sort="int"><span class="am-icon-filter">关注人数</span></th>
+        <th>操作</th>
       </tr>
     </thead>
     <tbody class="query-result">

@@ -149,5 +149,7 @@ $(function() {
             '</tr>';
       blackboard.append(content);
     });
+
+    $("#stupid-table").stupidtable();
   }
 });
